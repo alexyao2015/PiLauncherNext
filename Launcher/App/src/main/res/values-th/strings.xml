@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">-爪 Launcher-</string>
+    <string name="app_name">爪 Launcher</string>
     <string name="default_apps_group">ปพลิเคชัน</string>
     <string name="add_group">เพิ่มกลุ่ม</string>
     <string name="delete_group">ลบกลุ่ม</string>

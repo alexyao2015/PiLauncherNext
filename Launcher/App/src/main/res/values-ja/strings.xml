@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">"-爪 ランチャー "</string>
+    <string name="app_name">爪 ランチャー</string>
     <string name="default_apps_group">アプリ</string>
     <string name="add_group">グループを追加</string>
     <string name="delete_group">グループを削除</string>

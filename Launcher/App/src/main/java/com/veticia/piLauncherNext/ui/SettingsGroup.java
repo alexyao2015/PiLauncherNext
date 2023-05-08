@@ -33,7 +33,7 @@ public class SettingsGroup extends LinearLayout {
     }
 
     private void initView() {
-        View root = inflate(getContext(), R.layout.lv_app, this);
+        View root = inflate(getContext(), R.layout.lv_app_plain, this);
         mText = root.findViewById(R.id.textLabel);
         mIcon = root.findViewById(R.id.imageLabel);
     }

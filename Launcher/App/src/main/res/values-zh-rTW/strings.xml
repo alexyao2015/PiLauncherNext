@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">-爪 啟動器-</string>
+    <string name="app_name">爪 啟動器</string>
     <string name="default_apps_group">應用程序</string>
     <string name="add_group">添加分組</string>
     <string name="delete_group">刪除分組</string>

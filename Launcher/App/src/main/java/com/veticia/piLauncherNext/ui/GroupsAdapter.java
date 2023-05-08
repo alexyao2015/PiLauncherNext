@@ -1,6 +1,7 @@
 package com.veticia.piLauncherNext.ui;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.view.DragEvent;
@@ -94,10 +95,16 @@ public class GroupsAdapter extends BaseAdapter {
             final Set<String> appGroupsList = settingsProvider.getAppGroups();
             final String oldGroupName = settingsProvider.getAppGroupsSorted(false).get(position);
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(mainActivity);
+            AlertDialog.Builder builder = new AlertDialog.Builder(mainActivity, R.style.CustomDialog);
             builder.setView(R.layout.dialog_group_details);
 
             AlertDialog dialog = builder.create();
+
+            mainActivity.findViewById(R.id.dialogDim).setVisibility(View.VISIBLE);
+            dialog.setOnDismissListener((DialogInterface dialogInterface) -> {
+                mainActivity.findViewById(R.id.dialogDim).setVisibility(View.GONE);
+            });
+
             dialog.getWindow().setBackgroundDrawableResource(R.drawable.bkg_dialog);
             dialog.show();
 

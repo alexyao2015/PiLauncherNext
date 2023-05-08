@@ -13,6 +13,7 @@
         android:paddingBottom="20dp"
         android:textColor="@android:color/white"
         android:textSize="20sp"
+        android:textStyle="bold"
         android:text="@string/settings_platforms"/>
 
     <LinearLayout
@@ -24,8 +25,8 @@
         android:orientation="horizontal">
 
         <View
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/ic_platform_android"/>
 
@@ -49,8 +50,8 @@
         android:orientation="horizontal">
 
         <View
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/ic_platform_psp"/>
 
@@ -75,8 +76,8 @@
         android:orientation="horizontal">
 
         <View
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/ic_platform_vr"/>
 

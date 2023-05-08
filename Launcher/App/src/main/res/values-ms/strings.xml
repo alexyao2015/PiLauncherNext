@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">-爪 Pelancar-</string>
+    <string name="app_name">爪 Pelancar</string>
     <string name="default_apps_group">Apl</string>
     <string name="add_group">Tambah kumpulan</string>
     <string name="delete_group">Padamkan kumpulan</string>

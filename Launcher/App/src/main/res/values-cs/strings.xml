@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">-爪 Launcher-</string>
+    <string name="app_name">爪 Launcher</string>
     <string name="default_apps_group">Aplikace</string>
     <string name="add_group">Přidat skupinu</string>
     <string name="delete_group">Smazat skupinu</string>

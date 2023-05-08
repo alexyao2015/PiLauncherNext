@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:id="@+id/linearLayoutMain">
+    android:id="@+id/linearLayoutMain"
+    android:background="@drawable/bkg_window">
 
     <ImageView
         android:id="@+id/background"
@@ -118,4 +119,10 @@
         android:textColor="@color/ef_colorTextPrimary"
         android:textSize="@dimen/ef_font_medium"
         android:visibility="gone" />
+    <View
+        android:id="@+id/dialogDim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bkg_dialog_dim"
+        android:visibility="gone"/>
 </RelativeLayout>

@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
@@ -22,6 +23,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewOutlineProvider;
 import android.view.animation.AlphaAnimation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -29,6 +31,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -61,7 +64,7 @@ public class MainActivity extends Activity
 {
     private static final String CUSTOM_THEME = "theme.png";
     private static final boolean DEFAULT_NAMES = true;
-    private static final int DEFAULT_OPACITY = 7;
+    private static final int DEFAULT_OPACITY = 10;
     public static final int DEFAULT_SCALE = 2;
     private static final int DEFAULT_THEME = 0;
     public static final int DEFAULT_STYLE = 0;
@@ -87,6 +90,8 @@ public class MainActivity extends Activity
     public static final String EMULATOR_PACKAGE = "org.ppsspp.ppssppvr";
 
     private static ImageView[] selectedThemeImageViews;
+
+    private RelativeLayout mainView;
 
     private GridView appGridView;
     private ImageView backgroundImageView;
@@ -123,9 +128,14 @@ public class MainActivity extends Activity
         settingsProvider = SettingsProvider.getInstance(this);
 
         // Get UI instances
+        mainView = findViewById(R.id.linearLayoutMain);
         appGridView = findViewById(R.id.appsView);
         backgroundImageView = findViewById(R.id.background);
         groupPanelGridView = findViewById(R.id.groupsView);
+
+        // Set clipToOutline to true on mainView (Workaround for bug)
+        mainView.setOutlineProvider(ViewOutlineProvider.BACKGROUND);
+        mainView.setClipToOutline(true);
 
         // Handle group click listener
         groupPanelGridView.setOnItemClickListener((parent, view, position, id) -> {
@@ -401,7 +411,7 @@ public class MainActivity extends Activity
     }
 
     public Dialog showPopup(int layout) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomDialog);
         builder.setView(layout);
         AlertDialog dialog = builder.create();
         dialog.show();
@@ -415,6 +425,11 @@ public class MainActivity extends Activity
     private void showSettingsMain() {
 
         Dialog dialog = showPopup(R.layout.dialog_settings);
+        mainView.findViewById(R.id.dialogDim).setVisibility(View.VISIBLE);
+        dialog.setOnDismissListener((DialogInterface dialogInterface) -> {
+            mainView.findViewById(R.id.dialogDim).setVisibility(View.GONE);
+        });
+
         SettingsGroup apps = dialog.findViewById(R.id.settings_apps);
         boolean editMode = !sharedPreferences.getBoolean(SettingsProvider.KEY_EDITMODE, false);
         apps.setIcon(editMode ? R.drawable.ic_editing_on : R.drawable.ic_editing_off);
@@ -454,7 +469,7 @@ public class MainActivity extends Activity
             dialog.findViewById(R.id.settings_device).setVisibility(View.GONE);
         }
         if (!AbstractPlatform.isOculusHeadset()) {
-            dialog.findViewById(R.id.settings_tweaks).setVisibility(View.GONE);
+        //    dialog.findViewById(R.id.settings_tweaks).setVisibility(View.GONE);
         }
     }
 
