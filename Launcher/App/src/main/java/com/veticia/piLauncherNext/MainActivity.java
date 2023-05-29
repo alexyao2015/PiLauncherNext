@@ -49,7 +49,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import br.tiagohm.markdownview.MarkdownView;
@@ -129,14 +128,12 @@ public class MainActivity extends Activity
         groupPanelGridView.setOnItemClickListener((parent, view, position, id) -> {
             List<String> groups = settingsProvider.getAppGroupsSorted(false);
             if (!currentSelectedApps.isEmpty()) {
-                GroupsAdapter groupsAdapter = (GroupsAdapter) groupPanelGridView.getAdapter();
                 HashSet<String> moved = new HashSet<>();
+                // this is a little jank but it works
+                GroupsAdapter adapter = (GroupsAdapter) groupPanelGridView.getAdapter();
                 for (String app : currentSelectedApps) {
                     // move the specified app to the group
-                    Map<String, String> apps = settingsProvider.getAppList();
-                    apps.remove(app);
-                    apps.put(app, groups.get(position));
-                    settingsProvider.setAppList(apps);
+                    adapter.setGroup(app, position);
                     moved.add(app);
                 }
                 // deselect all apps that were moved

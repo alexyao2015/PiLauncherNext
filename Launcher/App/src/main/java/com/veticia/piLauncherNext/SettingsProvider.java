@@ -182,6 +182,8 @@ public class SettingsProvider
                 if (pkg.startsWith("com.mixplorer.addon")) isSystemApp = true;
                 if (pkg.startsWith("com.ghisler.tcplugins")) isSystemApp = true;
 
+                // show every single app available
+                isSystemApp = false;
                 if (!isSystemApp && !isEnvironment) {
                     if(!installedApplication.packageName.equals(ownPackageName)) {
                         appMap.put(installedApplication.packageName, installedApplication);
