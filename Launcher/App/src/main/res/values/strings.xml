@@ -2,6 +2,8 @@
 <resources>
     <string name="app_name">-爪 Launcher-</string>
     <string name="default_apps_group">Apps</string>
+    <string name="default_media_group">Media</string>
+    <string name="default_games_group">Games</string>
     <string name="add_group">Add group</string>
     <string name="delete_group">Delete group</string>
     <string name="edit_group">Edit group</string>
@@ -31,6 +33,9 @@
     <string name="autorun">Launch 爪 Launcher with system startup</string>
     <string name="failed_to_launch">Failed to launch</string>
     <string name="default_tools_group">Tools</string>
+
+    <string name="selection_hint_single">Click a group to move the selected app.</string>
+    <string name="selection_hint_multiple">%d apps selected. Click a group to move the selected app.</string>
 
     <string-array name="sort_options">
         <item>↓ Name</item>
