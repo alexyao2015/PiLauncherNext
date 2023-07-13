@@ -70,7 +70,7 @@
                 android:shadowColor="#80000000"
                 android:shadowRadius="5"
                 android:src="@drawable/ic_mainmenu"
-                android:visibility="visible" />
+                android:visibility="gone" />
 
             <ImageView
                 android:id="@+id/update"

@@ -17,8 +17,6 @@
     <string name="settings_platforms">Platforms</string>
     <string name="settings_webview" translatable="false">Coming Soon &amp; Pre-Orders</string>
     <string name="settings_tweaks">System tweaks</string>
-    <string name="settings_ftp">FTP Client Placeholder</string>
-
     <string name="background_opacity">Background opacity</string>
     <string name="icons_size">Icons size</string>
     <string name="show_app_names">Show app names</string>
